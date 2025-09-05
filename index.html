@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jokes</title>
+  </head>
+  <body>
+    <h1>Jokes</h1>
+
+    <div>
+      <label for="type">Válasszon mi alapján szeretne viccet: </label>
+      <select name="type" id="type">
+        <option value="random">Random vicc</option>
+        <option value="id">Id alapján</option>
+        <option value="type">Típus alapján</option>
+      </select>
+      <button onclick="selectType()">Tovább</button>
+      <p id="jokeIdInput" style="visibility: hidden">
+        <label for="jokeId">Enter the joke id</label>
+        <input type="number" id="jokeId" name="jokeId" />
+      </p>
+
+      <p id="joketypeInput" style="visibility: hidden">
+        <label for="jokeType">Enter the joke id</label>
+        <select name="jokeType" id="jokeType">
+          <option value="general">General</option>
+          <option value="knock">Knock-knock</option>
+          <option value="programming">Programming</option>
+          <option value="dad">Dad</option>
+        </select>
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
