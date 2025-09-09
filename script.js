@@ -17,14 +17,7 @@ async function selectType() {
     const idInput = document.getElementById("jokeIdInput");
     idInput.style.visibility = "visible";
     const jokeId = document.getElementById("jokeId").value;
-    
-    async function jokeById(jokeId){
-    const result = await getData(jokeId);
-          jokeSetup.innerHTML = result.setup;
-          jokePunchline.innerHTML = result.punchline;
-          punchButton.style.visibility = "visible";
-    }
-    
+   
   }
 }
 
@@ -42,10 +35,15 @@ async function getData(type) {
     }
 
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error.message);
   }
 }
 
+   async function jokeById(jokeId){
+    const result = await getData(jokeId);
+          jokeSetup.innerHTML = result.setup;
+          jokePunchline.innerHTML = result.punchline;
+          punchButton.style.visibility = "visible";
+    }

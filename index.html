@@ -22,7 +22,7 @@
       <p id="jokeIdInput" style="visibility: hidden">
         <label for="jokeId">Enter the joke id</label>
         <input type="number" id="jokeId" name="jokeId" />
-        <button id="jokeByIdBtn" onclick="jokeById()"></button>
+        <button id="jokeByIdBtn" onclick="jokeById(document.getElementById('jokeId').value)">Joke</button>
       </p>
 
       <p id="joketypeInput" style="visibility: hidden">
