@@ -16,14 +16,17 @@
         <option value="id">Id alapján</option>
         <option value="type">Típus alapján</option>
       </select>
+      
       <button onclick="selectType()">Tovább</button>
+
       <p id="jokeIdInput" style="visibility: hidden">
         <label for="jokeId">Enter the joke id</label>
         <input type="number" id="jokeId" name="jokeId" />
+        <button id="jokeByIdBtn" onclick="jokeById()"></button>
       </p>
 
       <p id="joketypeInput" style="visibility: hidden">
-        <label for="jokeType">Enter the joke id</label>
+        <label for="jokeType">Select the joke type: </label>
         <select name="jokeType" id="jokeType">
           <option value="general">General</option>
           <option value="knock">Knock-knock</option>
@@ -31,6 +34,10 @@
           <option value="dad">Dad</option>
         </select>
       </p>
+
+      <p id="jokeSetup"></p>
+      <button id="punch" onclick="punch()" style="visibility: hidden;">Punchline</button>
+      <p id="jokePunchline" style="visibility: hidden;"></p>
     </div>
     <script src="script.js"></script>
   </body>
