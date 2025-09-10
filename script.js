@@ -1,18 +1,35 @@
+const type = document.getElementById("type");
+type.addEventListener("change", function () {
+  if (type.value == "random") {
+    document.getElementById("jokeIdInput").style.display = "none";
+    document.getElementById("joketypeInput").style.display = "none";
+    resetButtons();
+  } else if (type.value == "id") {
+    document.getElementById("joketypeInput").style.display = "none";
+    document.getElementById("jokeIdInput").style.display = "block";
+    resetButtons();
+  } else if (type.value == "type") {
+    document.getElementById("jokeIdInput").style.display = "none";
+    document.getElementById("joketypeInput").style.display = "block";
+    resetButtons();
+  }
+});
+
 async function selectType() {
-  const type = document.getElementById("type").value;
+  //const type = document.getElementById("type");
   const jokeSetup = document.getElementById("jokeSetup");
   const punchButton = document.getElementById("punch");
   resetButtons();
 
-  if (type == "random") {
+  if (type.value == "random") {
     const result = await getData("random");
     jokeSetup.innerHTML = result.setup;
     jokePunchline.innerHTML = result.punchline;
-    punchButton.style.visibility = "visible";
-  } else if (type == "id") {
-    document.getElementById("jokeIdInput").style.visibility = "visible";
-  } else if (type == "type") {
-    document.getElementById("joketypeInput").style.visibility = "visible";
+    punchButton.style.display = "block";
+  } else if (type.value == "id") {
+    document.getElementById("jokeIdInput").style.display = "block";
+  } else if (type.value == "type") {
+    document.getElementById("joketypeInput").style.display = "block";
   }
 }
 
@@ -37,22 +54,23 @@ async function getData(type) {
 }
 
 async function jokeById(jokeId) {
-  const result = await getData(jokeId);
-  jokeSetup.innerHTML = result.setup;
-  document.getElementById("punch").style.visibility = "visible";
-  document.getElementById("jokePunchline").style.visibility = "hidden";
-  jokePunchline.innerHTML = result.punchline;
+  if (jokeId > 0 && jokeId < 452) {
+    const result = await getData(jokeId);
+    jokeSetup.innerHTML = result.setup;
+    document.getElementById("punch").style.display = "block";
+    document.getElementById("jokePunchline").style.visibility = "hidden";
+    jokePunchline.innerHTML = result.punchline;
+  }
 }
 async function jokeByType(jokeType) {
   const result = await getData(jokeType + "/random/");
   jokeSetup.innerHTML = result[0].setup;
-  document.getElementById("punch").style.visibility = "visible";
+  document.getElementById("punch").style.display = "block";
   document.getElementById("jokePunchline").style.visibility = "hidden";
   jokePunchline.innerHTML = result[0].punchline;
 }
 function resetButtons() {
   document.getElementById("jokePunchline").style.visibility = "hidden";
-  document.getElementById("jokeIdInput").style.visibility = "hidden";
-  document.getElementById("punch").style.visibility = "hidden";
+  document.getElementById("punch").style.display = "none";
   document.getElementById("jokeSetup").innerHTML = "";
 }

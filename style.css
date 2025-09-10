@@ -1,3 +1,86 @@
-* {
-    text-align:  center;
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #2c3e50;
+}
+
+.container {
+  margin-top: 40px;
+  padding: 20px;
+  width: 95%;
+  max-width: 600px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+select,
+input {
+  padding: 10px 15px;
+  margin: 5px 0 15px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+#jokeSetup,
+#jokePunchline {
+  font-size: 1.1rem;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  min-height: 80px;
+  max-height: 80px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#jokeSetup {
+  background: #e8f2fc;
+  border: 1px solid #b5d4f1;
+}
+
+#jokePunchline {
+  background: #fdecea;
+  border: 1px solid #f5b7b1;
+  color: #c0392b;
+  font-style: italic;
+  text-align: center;
+}
+
+#punch {
+  margin: 15px auto 0;
+  display: block;
 }
