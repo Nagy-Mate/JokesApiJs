@@ -29,10 +29,11 @@
         <label for="jokeType">Select the joke type: </label>
         <select name="jokeType" id="jokeType">
           <option value="general">General</option>
-          <option value="knock">Knock-knock</option>
+          <option value="knock-knock">Knock-knock</option>
           <option value="programming">Programming</option>
           <option value="dad">Dad</option>
         </select>
+        <button id="jokeByTypeBtn" onclick="jokeByType(document.getElementById('jokeType').value)">Joke</button>
       </p>
 
       <p id="jokeSetup"></p>
